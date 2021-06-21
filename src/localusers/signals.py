@@ -1,8 +1,7 @@
-from django.db import models
 from allauth.account.signals import user_logged_in
 
 
-def logged_in(request, user, **kwargs):
+def logged_in(request, user):
     print("user logged in, hello kitty")
 
 
