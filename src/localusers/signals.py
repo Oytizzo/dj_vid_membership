@@ -1,4 +1,4 @@
-from allauth.account.signals import user_logged_in, user_logged_out, user_signed_up
+from allauth.account.signals import user_logged_in, user_logged_out, user_signed_up, email_confirmed
 from django.dispatch import receiver
 
 
@@ -17,3 +17,8 @@ def logged_out(request, user, **kwargs):
 @receiver(user_signed_up)
 def signed_up(request, user):
     print("You are just signed up! Log in?")
+
+
+@receiver(email_confirmed)
+def email_confirmation(request, email_address):
+    print("Email address confirmed")
