@@ -15,10 +15,10 @@ def logged_out(request, user, **kwargs):
 
 
 @receiver(user_signed_up)
-def signed_up(request, user):
+def signed_up(request, user, **kwargs):
     print("You are just signed up! Log in?")
 
 
 @receiver(email_confirmed)
-def email_confirmation(request, email_address):
+def email_confirmation(request, email_address, **kwargs):
     print("Email address confirmed")
