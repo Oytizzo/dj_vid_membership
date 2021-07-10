@@ -8,3 +8,18 @@
 
 ## Profile
     -User               (foreignkey to default user)
+
+## Course
+    - slug
+    - title
+    - description
+    - allowed_membership    (foreignkey to Membership)
+
+## Lesson
+    - slug
+    - position
+    - title
+    - description
+    - course                (foreignkey to Course)
+    - video
+    - thumbnail
