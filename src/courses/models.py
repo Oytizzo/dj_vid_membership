@@ -25,7 +25,7 @@ class Course(models.Model):
 
 
 class Lesson(models.Model):
-    slug = models.SlugField()
+    slug = models.SlugField(blank=True)
     position = models.IntegerField()
     title = models.CharField(max_length=255)
     description = models.TextField()
