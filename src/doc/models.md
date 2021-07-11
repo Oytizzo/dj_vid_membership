@@ -1,19 +1,23 @@
 # Model Architecture Planning
 
 ## Membership
-    -slug
-    -membership_type
-    -price
-    -stripe_plan_id
+    - slug
+    - membership_type
+    - price
+    - stripe_plan_id
 
 ## Profile
-    -User               (foreignkey to default user)
+    - User               (foreignkey to default user)
+    * uncomplete
+
+## Subscription
+    * uncomplete
 
 ## Course
     - slug
     - title
     - description
-    - allowed_membership    (foreignkey to Membership)
+    - allowed_membership    (ManyToMany to Membership)
 
 ## Lesson
     - slug
