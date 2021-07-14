@@ -21,6 +21,9 @@ urlpatterns = [
     # localusers app
     path('', include('localusers.urls')),
 
+    # courses app
+    path('courses/', include('courses.urls')),
+
     # django-allauth
     path('accounts/', include('allauth.urls')),
 ]

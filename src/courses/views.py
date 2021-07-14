@@ -3,4 +3,4 @@ from django.http import HttpResponse
 
 
 def courses(request):
-    return HttpResponse("All courses")
+    return HttpResponse("<h1>All courses</h1>")
