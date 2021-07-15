@@ -3,4 +3,5 @@ from django.http import HttpResponse
 
 
 def courses(request):
-    return HttpResponse("<h1>All courses</h1>")
+    context = {}
+    return render(request, 'courses/home.html', context)
