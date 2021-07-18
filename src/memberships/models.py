@@ -16,3 +16,16 @@ class UserMembership(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, primary_key=True)
     stripe_customer_id = models.CharField(max_length=100)
     membership = models.ForeignKey(Memberships, on_delete=models.SET_NULL, null=True)
+
+    def __str__(self):
+        return self.user.username
+
+
+class Subscription(models.Model):
+    user_membership = models.ForeignKey(UserMembership, on_delete=models.CASCADE)
+    stripe_subscription_id = models.CharField(max_length=100)
+    active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.user_membership.user.username
+
