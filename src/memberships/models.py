@@ -4,7 +4,7 @@ from django.db.models.signals import post_save
 # import stripe
 
 
-class Memberships(models.Model):
+class Membership(models.Model):
     MEMBERSHIP_FREE = 'F'
     MEMBERSHIP_PRO = 'P'
 
@@ -25,7 +25,7 @@ class Memberships(models.Model):
 class UserMembership(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, primary_key=True)
     stripe_customer_id = models.CharField(max_length=100)
-    membership = models.ForeignKey(Memberships, on_delete=models.SET_NULL, null=True)
+    membership = models.ForeignKey(Membership, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         return self.user.username
