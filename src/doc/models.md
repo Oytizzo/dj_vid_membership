@@ -7,8 +7,9 @@
     - stripe_plan_id
 
 ## Profile
-    - User               (foreignkey to default user)
-    * uncomplete
+    - User                  (OneToOneField to default user)
+    - stripe_customer_id
+    - membership            (foreignkey to Membership)
 
 ## Subscription
     * uncomplete
